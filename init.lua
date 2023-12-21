@@ -182,7 +182,7 @@ require("lazy").setup({
         }),
         sources = {
           { name = "nvim_lsp" },
-          { name = "luasnip" },
+          -- { name = "luasnip" },
         },
       })
     end,
@@ -297,6 +297,8 @@ require("lazy").setup({
           "vimdoc",
           "vim",
           "bash",
+          "query",
+          "markdown",
         },
         highlight = { enable = true },
         indent = { enable = true },
@@ -381,20 +383,19 @@ require("lazy").setup({
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
-vim.wo.number = true -- Make line numbers default
-vim.o.mouse = "a" -- Enable mouse mode
-vim.o.clipboard = "unnamedplus" -- Sync clipboard between OS and Neovim.
-vim.o.breakindent = true -- Enable break indent
-vim.o.ignorecase = true -- Case-insensitive searching UNLESS \C or capital in search
-vim.o.smartcase = true
-vim.o.updatetime = 250 -- Decrease update time
-vim.o.timeoutlen = 300
-vim.o.termguicolors = true
+vim.opt.number = true -- Make line numbers default
+vim.opt.relativenumber = true -- use reletive line numbers
+vim.opt.mouse = "a" -- Enable mouse mode
+vim.opt.clipboard = "unnamedplus" -- Sync clipboard between OS and Neovim.
+vim.opt.breakindent = true -- Enable break indent
+vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.smartcase = true
+vim.opt.termguicolors = true
 vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.grepformat = "%f:%l:%c:%m" -- Use ripgrep for grep
 vim.opt.grepprg = "rg --vimgrep"
-vim.opt.scrolloff = 4 -- Lines of context
+vim.opt.scrolloff = 999 -- Lines of context (keep cursor in middle)
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 vim.opt.showmode = false -- Dont show mode since we have a statusline
 vim.opt.sidescrolloff = 8 -- Columns of context
@@ -404,28 +405,34 @@ vim.opt.splitright = true -- Put new windows right of current
 vim.opt.wrap = false -- Disable line wrap
 vim.opt.colorcolumn = "80" -- Marker at line 80
 vim.opt.laststatus = 3 -- Global statusline
-vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't continue a comment to next line
 vim.opt.tabstop = 2 -- 2 spaces for tabs
 vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.signcolumn = "yes" -- Show sign column so text doesn't shift
+vim.opt.virtualedit = "block"
+vim.opt.inccommand = "split"
+-- vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't continue a comment to next line
+-- vim.opt.updatetime = 250 -- Decrease update time
+-- vim.opt.timeoutlen = 300
+
+vim.g.netrw_liststyle = 3 -- netrw use tree view
 
 -- [[ Basic Keymaps ]]
 -- copy and paste from system clipboard
-vim.keymap.set({ "n", "v" }, "<C-c>", [["+y]])
-vim.keymap.set({ "n", "v" }, "<C-v>", [["+p]])
-vim.keymap.set("i", "<C-v>", "<C-r>+")
+-- vim.keymap.set({ "n", "v" }, "<C-c>", [["+y]])
+-- vim.keymap.set({ "n", "v" }, "<C-v>", [["+p]])
+-- vim.keymap.set("i", "<C-v>", "<C-r>+")
 
 -- delete without yanking
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- when scrolling up or down make sure cursor is centered
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- when navigating through found stuff make sure cursor is centered
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
 
 -- lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
