@@ -299,6 +299,7 @@ require("lazy").setup({
           "bash",
           "query",
           "markdown",
+          "terraform"
         },
         highlight = { enable = true },
         indent = { enable = true },
@@ -395,7 +396,7 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.grepformat = "%f:%l:%c:%m" -- Use ripgrep for grep
 vim.opt.grepprg = "rg --vimgrep"
-vim.opt.scrolloff = 999 -- Lines of context (keep cursor in middle)
+vim.opt.scrolloff = 8 -- Lines of context (keep cursor in middle)
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 vim.opt.showmode = false -- Dont show mode since we have a statusline
 vim.opt.sidescrolloff = 8 -- Columns of context
