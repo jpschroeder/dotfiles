@@ -40,7 +40,7 @@ require("lazy").setup({
       -- Enable language servers
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls", "pyright" },
+        ensure_installed = { "lua_ls", "gopls", "pyright", "terraformls" },
       })
     end,
   },
@@ -59,7 +59,10 @@ require("lazy").setup({
     },
     config = function()
       --  This function gets run when an LSP connects to a particular buffer.
-      local on_attach = function(_, bufnr)
+      local on_attach = function(client, bufnr)
+        -- Don't use lsp for syntax highlighting
+        client.server_capabilities.semanticTokensProvider = nil
+
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "LSP: [R]e[n]ame" })
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "LSP: [C]ode [A]ction" })
 
@@ -102,6 +105,11 @@ require("lazy").setup({
       })
 
       lspconfig.gopls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      lspconfig.terraformls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
@@ -299,7 +307,7 @@ require("lazy").setup({
           "bash",
           "query",
           "markdown",
-          "terraform"
+          "terraform",
         },
         highlight = { enable = true },
         indent = { enable = true },
@@ -385,7 +393,7 @@ require("lazy").setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 vim.opt.number = true -- Make line numbers default
-vim.opt.relativenumber = true -- use reletive line numbers
+-- vim.opt.relativenumber = true -- use relative line numbers
 vim.opt.mouse = "a" -- Enable mouse mode
 vim.opt.clipboard = "unnamedplus" -- Sync clipboard between OS and Neovim.
 vim.opt.breakindent = true -- Enable break indent
@@ -396,7 +404,7 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.grepformat = "%f:%l:%c:%m" -- Use ripgrep for grep
 vim.opt.grepprg = "rg --vimgrep"
-vim.opt.scrolloff = 8 -- Lines of context (keep cursor in middle)
+-- vim.opt.scrolloff = 8 -- Lines of context (keep cursor in middle)
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 vim.opt.showmode = false -- Dont show mode since we have a statusline
 vim.opt.sidescrolloff = 8 -- Columns of context
@@ -404,7 +412,7 @@ vim.opt.smartindent = true -- Insert indents automatically
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.wrap = false -- Disable line wrap
-vim.opt.colorcolumn = "80" -- Marker at line 80
+vim.opt.colorcolumn = "88" -- Marker at column 88
 vim.opt.laststatus = 3 -- Global statusline
 vim.opt.tabstop = 2 -- 2 spaces for tabs
 vim.opt.shiftwidth = 2 -- 2 spaces for indent width
