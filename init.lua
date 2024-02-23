@@ -407,6 +407,7 @@ vim.opt.grepprg = "rg --vimgrep"
 -- vim.opt.scrolloff = 8 -- Lines of context (keep cursor in middle)
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 vim.opt.showmode = false -- Dont show mode since we have a statusline
+vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
 vim.opt.sidescrolloff = 8 -- Columns of context
 vim.opt.smartindent = true -- Insert indents automatically
 vim.opt.splitbelow = true -- Put new windows below current
