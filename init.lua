@@ -426,6 +426,7 @@ vim.opt.inccommand = "split"
 -- vim.opt.timeoutlen = 300
 
 vim.g.netrw_liststyle = 3 -- netrw use tree view
+vim.g.netrw_banner = 0 -- disable banner
 
 -- [[ Basic Keymaps ]]
 -- copy and paste from system clipboard
