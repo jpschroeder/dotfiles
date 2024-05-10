@@ -157,6 +157,7 @@ vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboa
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p') -- paste after cursor
 vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
 -- vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
+-- vim.keymap.set('i', '<D-v>', '<C-R>+') -- cmd+v to paste in insert mode
 vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
 vim.keymap.set('i', '<C-v>', '<C-R>+') -- ctrl+v to paste in insert mode
 
