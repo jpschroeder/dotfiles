@@ -147,17 +147,16 @@ vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window 
 vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
 
--- Yank into system clipboard
+-- Copy/Paste to system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- yank motion
 vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
--- vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
-vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
-
--- Paste from system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p') -- paste after cursor
 vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
+
+-- vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
 -- vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
 -- vim.keymap.set('i', '<D-v>', '<C-R>+') -- cmd+v to paste in insert mode
+vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
 vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
 vim.keymap.set('i', '<C-v>', '<C-R>+') -- ctrl+v to paste in insert mode
 
