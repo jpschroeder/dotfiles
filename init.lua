@@ -159,6 +159,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
 -- vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
 vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
 
+vim.keymap.set('n', '<leader>l', '<cmd>20Lexplore<cr>', { desc = 'Open netrw explorer' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
