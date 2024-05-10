@@ -28,7 +28,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -146,6 +146,18 @@ vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window he
 vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window height' })
 vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
+
+-- Yank into system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- yank motion
+vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
+-- vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
+vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
+
+-- Paste from system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p') -- paste after cursor
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
+-- vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
+vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
