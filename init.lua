@@ -57,8 +57,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -70,6 +70,7 @@ vim.opt.cursorline = true
 -- vim.opt.scrolloff = 10
 
 -- Custom options
+vim.opt.tabstop = 4
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
 vim.opt.sidescrolloff = 8 -- Columns of context
@@ -153,12 +154,15 @@ vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p') -- paste after cursor
 vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
 
--- vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
--- vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
--- vim.keymap.set('i', '<D-v>', '<C-R>+') -- cmd+v to paste in insert mode
-vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
-vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
-vim.keymap.set('i', '<C-v>', '<C-R>+') -- ctrl+v to paste in insert mode
+if jit.os == 'OSX' then
+  vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
+  vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
+  vim.keymap.set('i', '<D-v>', '<C-R>+') -- cmd+v to paste in insert mode
+else
+  vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
+  vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
+  vim.keymap.set('i', '<C-v>', '<C-R>+') -- ctrl+v to paste in insert mode
+end
 
 vim.keymap.set('n', '<leader>l', '<cmd>20Lexplore<cr>', { desc = 'Open netrw explorer' })
 
