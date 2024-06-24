@@ -69,25 +69,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 -- vim.opt.scrolloff = 10
 
--- Custom options
-vim.opt.tabstop = 4
-vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
-vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
-vim.opt.sidescrolloff = 8 -- Columns of context
-vim.opt.smartindent = true -- Insert indents automatically
-vim.opt.wrap = false -- Disable line wrap
-vim.opt.colorcolumn = '88' -- Marker at column 88
---vim.opt.laststatus = 3 -- Global statusline
-vim.opt.virtualedit = 'block'
-vim.opt.termguicolors = true
-vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
-vim.opt.cursorline = true -- Enable highlighting of the current line
-vim.opt.grepformat = '%f:%l:%c:%m' -- Use ripgrep for grep
-vim.opt.grepprg = 'rg --vimgrep'
-vim.g.netrw_liststyle = 3 -- netrw use tree view
-vim.g.netrw_banner = 0 -- disable banner
-vim.highlight.priorities.semantic_tokens = 95 -- Prevent LSP from overwrtiting treesitter color settings
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -124,7 +105,26 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Custom keymaps
+-- [[ Custom Options ]]
+vim.opt.tabstop = 4
+vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
+vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
+vim.opt.sidescrolloff = 8 -- Columns of context
+vim.opt.smartindent = true -- Insert indents automatically
+vim.opt.wrap = false -- Disable line wrap
+vim.opt.colorcolumn = '88' -- Marker at column 88
+--vim.opt.laststatus = 3 -- Global statusline
+vim.opt.virtualedit = 'block'
+vim.opt.termguicolors = true
+vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
+vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.grepformat = '%f:%l:%c:%m' -- Use ripgrep for grep
+vim.opt.grepprg = 'rg --vimgrep'
+vim.g.netrw_liststyle = 3 -- netrw use tree view
+vim.g.netrw_banner = 0 -- disable banner
+vim.highlight.priorities.semantic_tokens = 95 -- Prevent LSP from overwrtiting treesitter color settings
+
+-- [[ Custom Keymaps ]]
 -- Close all but the current buffer
 vim.keymap.set('n', '<leader>bo', function()
   vim.cmd '%bd|e#'
@@ -166,6 +166,22 @@ else
 end
 
 vim.keymap.set('n', '<leader>l', '<cmd>20Lexplore<cr>', { desc = 'Open netrw explorer' })
+
+-- Tell Kitty that the editor is running
+-- See: https://sw.kovidgoyal.net/kitty/mapping/#conditional-mappings-depending-on-the-state-of-the-focused-window
+vim.api.nvim_create_autocmd({ 'VimEnter', 'VimResume' }, {
+  group = vim.api.nvim_create_augroup('KittySetVarVimEnter', { clear = true }),
+  callback = function()
+    io.stdout:write '\x1b]1337;SetUserVar=in_editor=MQo\007'
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
+  group = vim.api.nvim_create_augroup('KittyUnsetVarVimLeave', { clear = true }),
+  callback = function()
+    io.stdout:write '\x1b]1337;SetUserVar=in_editor\007'
+  end,
+})
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -751,7 +767,26 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     opts = {
-      ensure_installed = { 'c', 'go', 'gomod', 'gowork', 'gosum', 'lua', 'python', 'javascript', 'vimdoc', 'vim', 'bash', 'query', 'markdown', 'terraform' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+        'python',
+        'javascript',
+        'query',
+        'markdown',
+        'terraform',
+      },
       -- Autoinstall languages that are not installed
       highlight = {
         enable = true,
