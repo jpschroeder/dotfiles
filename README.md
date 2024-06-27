@@ -7,12 +7,12 @@ Config files.  Managed with gnu stow.
 ```sh 
 git clone https://github.com/jpschroeder/dotfiles.git ~/dotfiles
 cd dotfiles
-stow -v -S nvim
+stow -v -S nvim kitty
 ```
 
 ## uninstall
 
 ```sh
 cd ~/dotfiles
-stow -v -D nvim
+stow -v -D nvim kitty
 ```
