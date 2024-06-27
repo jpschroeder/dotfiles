@@ -1,9 +1,18 @@
-# nvim
+# dotfiles
 
-Config files for neovim
+Config files.  Managed with gnu stow.
 
 ## install
 
 ```sh 
-git clone https://github.com/jpschroeder/nvim.git ~/.config/nvim
+git clone https://github.com/jpschroeder/dotfiles.git ~/dotfiles
+cd dotfiles
+stow -v -S nvim
+```
+
+## uninstall
+
+```sh
+cd ~/dotfiles
+stow -v -D nvim
 ```
