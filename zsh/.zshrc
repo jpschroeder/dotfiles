@@ -45,6 +45,7 @@ alias tf=terraform
 alias bat='batcat -p'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+alias shortdate="date '+%Y_%m_%d'"
 
 eval "$(fzf --zsh)"
 
