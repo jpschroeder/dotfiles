@@ -38,7 +38,7 @@ export EDITOR='nvim'
 
 alias hr='printf "%*s\n" "${COLUMNS:-$(tput cols)}" "" | tr " " -'
 alias lg='lazygit'
-alias ll='exa -l --group-directories-first'
+alias ll='exa -lh --group-directories-first --icons'
 alias ls='exa'
 alias tree='exa --tree'
 alias tf='terraform'
@@ -46,12 +46,19 @@ alias bat='batcat -p'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias shortdate="date '+%Y_%m_%d'"
+alias n='nvim'
+alias g='git'
 
 eval "$(fzf --zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+gcb () { git checkout -b "${1}" && git push -u origin "${1}" }
+gcm () { git checkout master && git pull }
+# https://sw.kovidgoyal.net/kitty/desktop-notifications/
+notify () { printf "\\x1b]99;;${1}\\x1b\\\\" }
 
 # BEGIN Ubuntu recommended zsh options
 
