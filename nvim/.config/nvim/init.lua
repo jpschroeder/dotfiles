@@ -705,17 +705,15 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme('onedark')
-      local onedark = require 'onedark'
-      onedark.setup {
-        -- style = 'darker',
-        transparent = true,
-      }
-      onedark.load()
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    opts = {
+      style = 'darker',
+      transparent = true,
+    },
+    init = function()
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 
