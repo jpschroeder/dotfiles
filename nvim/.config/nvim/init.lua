@@ -230,6 +230,9 @@ require('lazy').setup({
   -- highlighting for csv
   'mechatroner/rainbow_csv',
 
+  -- syntax highlighting for kitty config file: set ft=kitty
+  'fladson/vim-kitty',
+
   -- kitty integration
   'knubie/vim-kitty-navigator',
 
