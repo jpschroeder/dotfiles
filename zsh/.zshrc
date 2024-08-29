@@ -17,6 +17,8 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+bindkey -v '^?' backward-delete-char
+
 export PATH="$HOME/go/bin:$PATH"
 
 export HISTFILE="$HOME/.zsh_history"
@@ -64,7 +66,7 @@ notify () { printf "\\x1b]99;;${1}\\x1b\\\\" }
 # BEGIN Ubuntu recommended zsh options
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+#bindkey -e
 
 # Use modern completion system
 autoload -Uz compinit
