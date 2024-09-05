@@ -29,14 +29,14 @@ end, { desc = 'Leave [O]nly the current [B]uffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bp|bd#<cr>', { desc = '[D]elete the current [B]uffer' })
 
 -- make space a noop
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true, desc = 'Make space a noop' })
 
 -- when indenting block in visual mode keep the selection
-vim.keymap.set('v', '<', '<gv')
-vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv', { desc = 'De-indent selection' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent selection' })
 
 -- delete without yanking
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [['_d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [['_d]], { desc = 'Delete without yanking' })
 
 -- Resize window using <ctrl> arrow keys
 vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window height' })
@@ -45,19 +45,19 @@ vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decreas
 vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
 
 -- Copy/Paste to system clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- yank motion
-vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
-vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p') -- paste after cursor
-vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P') -- paste before cursor
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank motion to system clipboard' }) -- yank motion
+vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y', { desc = 'Yank line to system clipboard' }) -- yank line
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste after cursor from system clipboard' }) -- paste after cursor
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P', { desc = 'Paste before cursor from system clipboard' }) -- paste before cursor
 
 if jit.os == 'OSX' then
-  vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y') -- cmd+c to copy to system clipboard
-  vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p') -- cmd+v to paste from system clipboard
-  vim.keymap.set('i', '<D-v>', '<C-R>+') -- cmd+v to paste in insert mode
+  vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y', { desc = 'Copy to system clipboard' }) -- cmd+c to copy to system clipboard
+  vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p', { desc = 'Paste from system clipboard' }) -- cmd+v to paste from system clipboard
+  vim.keymap.set('i', '<D-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
 else
-  vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y') -- ctrl+c to copy to system clipboard
-  vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p') -- ctrl+v to paste from system clipboard
-  vim.keymap.set('i', '<C-v>', '<C-R>+') -- ctrl+v to paste in insert mode
+  vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y', { desc = 'Copy to system clipboard' }) -- cmd+c to copy to system clipboard
+  vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p', { desc = 'Paste from system clipboard' }) -- cmd+v to paste from system clipboard
+  vim.keymap.set('i', '<C-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
 end
 
 -- vim.keymap.set('n', '<leader>l', '<cmd>20Lexplore<cr>', { desc = 'Open netrw explorer' })
