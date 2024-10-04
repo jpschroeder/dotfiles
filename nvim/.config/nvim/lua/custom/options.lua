@@ -53,11 +53,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P', { desc = 'Paste before cursor f
 if jit.os == 'OSX' then
   vim.keymap.set({ 'n', 'v' }, '<D-c>', '"+y', { desc = 'Copy to system clipboard' }) -- cmd+c to copy to system clipboard
   vim.keymap.set({ 'n', 'v' }, '<D-v>', '"+p', { desc = 'Paste from system clipboard' }) -- cmd+v to paste from system clipboard
-  vim.keymap.set('i', '<D-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
+  vim.keymap.set({ 'i', 'c' }, '<D-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
 else
   vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y', { desc = 'Copy to system clipboard' }) -- cmd+c to copy to system clipboard
   vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p', { desc = 'Paste from system clipboard' }) -- cmd+v to paste from system clipboard
-  vim.keymap.set('i', '<C-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
+  vim.keymap.set({ 'i', 'c' }, '<C-v>', '<C-R>+', { desc = 'Paste from system clipboard' }) -- cmd+v to paste in insert mode
 end
 
 -- vim.keymap.set('n', '<leader>l', '<cmd>20Lexplore<cr>', { desc = 'Open netrw explorer' })
