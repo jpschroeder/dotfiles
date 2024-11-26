@@ -2,13 +2,13 @@
 -- vim.opt.tabstop = 4 -- disabled for now b/c figured out by plugin
 vim.opt.relativenumber = true
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
-vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
+-- vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)
 vim.opt.sidescrolloff = 8 -- Columns of context
 vim.opt.smartindent = true -- Insert indents automatically
 -- vim.opt.wrap = false -- Disable line wrap
 vim.opt.linebreak = true
 vim.opt.colorcolumn = '88' -- Marker at column 88
-vim.opt.laststatus = 3 -- Global statusline
+-- vim.opt.laststatus = 3 -- Global statusline
 vim.opt.virtualedit = 'block'
 vim.opt.termguicolors = true
 vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
