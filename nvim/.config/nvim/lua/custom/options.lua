@@ -1,5 +1,5 @@
 -- [[ Custom Options ]]
--- vim.opt.tabstop = 4 -- disabled for now b/c figured out by plugin
+vim.opt.tabstop = 4 -- disabled for now b/c figured out by plugin
 vim.opt.relativenumber = true
 vim.opt.shiftround = true -- Round indent to multiple of shiftwidth
 -- vim.opt.cmdheight = 0 -- hide the command line (it will show if necessary)

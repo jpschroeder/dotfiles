@@ -45,16 +45,13 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { trail = '·' }
+vim.opt.listchars = { tab = '▏ ', trail = '·' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -215,11 +212,7 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = require('telescope.themes').get_ivy(),
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -617,6 +610,16 @@ require('lazy').setup({
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
+          -- Scroll through a large number of entries
+          ['<C-d>'] = cmp.mapping(function()
+            local height = cmp.core.view:_get_entries_view():info().height
+            cmp.select_next_item { count = height }
+          end),
+          ['<C-u>'] = cmp.mapping(function()
+            local height = cmp.core.view:_get_entries_view():info().height
+            cmp.select_prev_item { count = height }
+          end),
+
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
@@ -741,6 +744,7 @@ require('lazy').setup({
         'markdown',
         'terraform',
         'graphql',
+        'sql',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
