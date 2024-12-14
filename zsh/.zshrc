@@ -52,6 +52,7 @@ alias pbpaste='xsel --clipboard --output'
 alias shortdate="date '+%Y_%m_%d'"
 alias n='nvim'
 alias g='git'
+alias lvim='NVIM_APPNAME=lvim nvim'
 
 eval "$(fzf --zsh)"
 
