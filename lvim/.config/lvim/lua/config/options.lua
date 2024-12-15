@@ -3,3 +3,5 @@
 -- Add any additional options here
 -- vim.highlight.priorities.semantic_tokens = 95 -- Prevent LSP from overwrtiting treesitter color settings
 vim.g.ai_cmp = false
+vim.opt.list = true
+vim.opt.listchars = { tab = "▏ ", trail = "·" }
