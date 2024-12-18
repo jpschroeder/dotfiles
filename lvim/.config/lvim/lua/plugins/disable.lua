@@ -2,10 +2,13 @@ return {
   {
     "snacks.nvim",
     opts = {
-      scroll = { enabled = false },
-      scope = { enabled = false },
       indent = { enabled = false },
+      input = { enabled = false },
       notifier = { enabled = false },
+      scope = { enabled = false },
+      scroll = { enabled = false },
+      dashboard = { enabled = false },
+      words = { enabled = false },
     },
   },
   {
