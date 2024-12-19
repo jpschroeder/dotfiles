@@ -4,7 +4,7 @@ Config files.  Managed with gnu stow.
 
 ## install
 
-```sh 
+```sh
 git clone https://github.com/jpschroeder/dotfiles.git ~/dotfiles
 cd dotfiles
 stow -v -S nvim
@@ -19,4 +19,12 @@ cd ~/dotfiles
 stow -v -D nvim
 stow -v -D kitty
 stow -v -D zshrc
+```
+
+## cleanup nvim
+
+```sh
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
 ```

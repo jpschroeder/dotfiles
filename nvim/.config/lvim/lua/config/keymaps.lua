@@ -16,3 +16,9 @@ vim.keymap.set("n", "<C-h>", "<cmd>KittyNavigateLeft<cr>", { desc = "Go to Left 
 vim.keymap.set("n", "<C-j>", "<cmd>KittyNavigateDown<cr>", { desc = "Go to Lower Window" })
 vim.keymap.set("n", "<C-k>", "<cmd>KittyNavigateUp<cr>", { desc = "Go to Upper Window" })
 vim.keymap.set("n", "<C-l>", "<cmd>KittyNavigateRight<cr>", { desc = "Go to Right Window" })
+
+vim.keymap.del("n", "<leader>n")
+vim.keymap.del("n", "<leader>un")
+vim.keymap.del("n", "<leader>.")
+vim.keymap.del("n", "<leader>S")
+vim.keymap.del("n", "<leader>dps")

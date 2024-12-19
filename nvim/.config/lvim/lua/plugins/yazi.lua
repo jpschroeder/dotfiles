@@ -20,7 +20,7 @@ return {
       -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
       "<leader>\\",
       "<cmd>Yazi toggle<cr>",
-      desc = "Resume the last yazi session",
+      desc = "Explorer Yazi (resume)",
     },
   },
   ---@type YaziConfig
