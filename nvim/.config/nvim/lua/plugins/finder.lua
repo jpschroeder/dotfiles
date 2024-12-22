@@ -15,8 +15,8 @@ return {
     { '<leader>fr', '<cmd>FzfLua oldfiles<cr>', desc = 'Recent' },
     { '<leader>fz', '<cmd>FzfLua<cr>', desc = 'Fzf' },
     -- git
-    { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Commits' },
-    { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Status' },
+    -- { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Commits' },
+    -- { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Status' },
     -- search
     { '<leader>s"', '<cmd>FzfLua registers<cr>', desc = 'Registers' },
     { '<leader>sa', '<cmd>FzfLua autocmds<cr>', desc = 'Auto Commands' },
