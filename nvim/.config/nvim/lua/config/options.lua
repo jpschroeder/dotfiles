@@ -15,7 +15,7 @@ vim.opt.listchars = { tab = '▏ ', trail = '·' }
 vim.opt.list = true
 vim.opt.mouse = 'a'
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 2
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
