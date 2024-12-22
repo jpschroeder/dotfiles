@@ -53,6 +53,7 @@ alias shortdate="date '+%Y_%m_%d'"
 alias n='nvim'
 alias g='git'
 alias lvim='NVIM_APPNAME=lvim nvim'
+alias kvim='NVIM_APPNAME=kvim nvim'
 
 eval "$(fzf --zsh)"
 

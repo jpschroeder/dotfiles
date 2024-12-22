@@ -1,6 +1,6 @@
 
 fmt:
-	stylua init.lua lua/
+	stylua init.lua
 
 clean-nvim:
 	rm -rf ~/.local/share/nvim
