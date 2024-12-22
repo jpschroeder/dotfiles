@@ -1,0 +1,32 @@
+
+EDITING
+D:                Delete to end of line
+C:                Change to end of line
+CTRL-^:           Edit the alternate file
+~:                Toggle case
+"+y:              Yank to system clipboard
+
+LSP
+i_CTRL-X_CTRL-O:  Trigger Omni Completion
+grn:              LSP Rename
+gra:              LSP Code Action
+grr:              LSP References
+gri:              LSP Implementation
+gO:               LSP Document Symbol
+i_CTRL-S:         LSP Signature Help
+gg=G:             Reindent file
+
+WINDOWS
+CTRL-W_K:         Move window to the top
+CTRL-W_J:         Move window to the bottom
+CTRL-W_H:         Move window to the left
+CTRL-W_L:         Move window to the right
+CTRL-W_T:         Move window to new tab
+CTRL-W_=:         Resize all windows
+
+MACROS
+qa:               Record macro to a register
+q:                Stop recording macro
+@a:               Play back the macro in the a register
+@@:               Play back the last macro
+

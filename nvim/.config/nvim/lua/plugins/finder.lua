@@ -37,7 +37,6 @@ return {
     { '<leader>sq', '<cmd>FzfLua quickfix<cr>', desc = 'Quickfix List' },
     { '<leader>sw', '<cmd>FzfLua grep_cword<cr>', desc = 'Word (Root Dir)' },
     { '<leader>sw', '<cmd>FzfLua grep_visual<cr>', mode = 'v', desc = 'Selection (Root Dir)' },
-    { '<leader>uC', '<cmd>FzfLua colorschemes<cr>', desc = 'Colorscheme with Preview' },
     { '<leader>ss', '<cmd>FzfLua lsp_document_symbols<cr>', desc = 'Goto Symbol' },
     { '<leader>sS', '<cmd>FzfLua lsp_workspace_symbols<cr>', desc = 'Goto Symbol (Workspace)' },
   },
