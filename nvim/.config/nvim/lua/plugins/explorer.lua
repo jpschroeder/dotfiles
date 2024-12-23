@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   'mikavilpas/yazi.nvim',
-  event = 'VeryLazy',
   keys = {
     {
       '<leader>fe',
@@ -30,5 +29,6 @@ return {
     keymaps = {
       show_help = '<f1>',
     },
+    yazi_floating_window_border = 'single',
   },
 }

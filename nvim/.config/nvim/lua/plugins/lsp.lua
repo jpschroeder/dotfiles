@@ -19,7 +19,7 @@ return {
   },
   {
     'saghen/blink.cmp',
-    dependencies = 'rafamadriz/friendly-snippets',
+    -- dependencies = 'rafamadriz/friendly-snippets',
     version = '*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -41,7 +41,8 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+        -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lazydev', 'lsp', 'path' },
         providers = {
           lazydev = {
             name = 'LazyDev',
@@ -71,6 +72,12 @@ return {
       },
     },
     config = function(_, opts)
+      vim.diagnostic.config {
+        signs = {
+          text = { ERROR = '', WARN = '', INFO = '', HINT = '' },
+          -- text = { ERROR = " ", WARN  = " ", INFO  = " ", HINT  = " "}
+        },
+      }
       local lspconfig = require 'lspconfig'
       for server, config in pairs(opts.servers) do
         config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
