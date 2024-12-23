@@ -27,9 +27,9 @@ vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
 -- Buffers
-vim.keymap.set("n", "<leader>bd", '<cmd>bp|bd#<cr>', { desc = "Delete Buffer" })
-vim.keymap.set("n", "<leader>bo", '<cmd>%bd|e#<cr>', { desc = "Delete Other Buffers" })
-vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+vim.keymap.set('n', '<leader>bd', '<cmd>bp|bd#<cr>', { desc = 'Delete Buffer' })
+vim.keymap.set('n', '<leader>bo', '<cmd>%bd|e#<cr>', { desc = 'Delete Other Buffers' })
+vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 
 -- Windows
 vim.keymap.set('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below' })
@@ -45,4 +45,3 @@ vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'Execute the current lua se
 -- File
 vim.keymap.set({ 'x', 'n' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
-

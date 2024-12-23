@@ -14,7 +14,7 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     opts = {
-      ensure_installed = { 'lua_ls', 'gopls' },
+      ensure_installed = { 'lua_ls', 'gopls', 'pyright' },
     },
   },
   {
@@ -51,6 +51,7 @@ return {
           },
         },
       },
+      signature = { enabled = true },
     },
     opts_extend = { 'sources.default' },
   },
@@ -66,6 +67,7 @@ return {
       servers = {
         lua_ls = {},
         gopls = {},
+        pyright = {},
       },
     },
     config = function(_, opts)
