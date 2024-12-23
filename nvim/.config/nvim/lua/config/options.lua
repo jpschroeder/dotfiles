@@ -8,6 +8,7 @@ vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.expandtab = true
+vim.opt.fillchars = { eob = ' ' }
 vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepprg = 'rg --vimgrep'
 vim.opt.linebreak = true
