@@ -30,8 +30,4 @@ return {
       show_help = '<f1>',
     },
   },
-  init = function()
-    -- set the border for the yazi window
-    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'NONE' })
-  end,
 }
