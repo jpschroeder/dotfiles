@@ -35,7 +35,6 @@ OTHER
 :set option?     See the value of an option
 
 TODO
-status line
 auto format on save
 lazygit
 
