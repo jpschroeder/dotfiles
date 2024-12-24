@@ -14,11 +14,9 @@ return {
   },
   config = function(_, opts)
     -- clear the background for the lazygit window
-    local normalfloat_hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
-    local normalfloat_fg = normalfloat_hl and normalfloat_hl.fg
-    if normalfloat_fg then
-      vim.api.nvim_set_hl(0, 'LazyGitNormal', { fg = normalfloat_fg, bg = 'NONE' })
-    end
+    local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
+    local fg = hl and hl.fg or 'NONE'
+    vim.api.nvim_set_hl(0, 'LazyGitNormal', { fg = fg, bg = 'NONE' })
 
     Snacks.setup(opts)
   end,
