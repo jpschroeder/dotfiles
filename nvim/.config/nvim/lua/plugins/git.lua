@@ -6,17 +6,17 @@ return {
     styles = {
       lazygit = {
         border = 'rounded',
-        wo = {
-          winhighlight = 'Normal:LazyGitNormal,NormalNC:LazyGitNormal,WinBar:SnacksWinBar,WinBarNC:SnacksWinBarNC',
-        },
+        -- wo = {
+        --   winhighlight = 'Normal:LazyGitNormal,NormalNC:LazyGitNormal,WinBar:SnacksWinBar,WinBarNC:SnacksWinBarNC',
+        -- },
       },
     },
   },
   config = function(_, opts)
     -- clear the background for the lazygit window
-    local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
-    local fg = hl and hl.fg or 'NONE'
-    vim.api.nvim_set_hl(0, 'LazyGitNormal', { fg = fg, bg = 'NONE' })
+    -- local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
+    -- local fg = hl and hl.fg or 'NONE'
+    -- vim.api.nvim_set_hl(0, 'LazyGitNormal', { fg = fg, bg = 'NONE' })
 
     Snacks.setup(opts)
   end,

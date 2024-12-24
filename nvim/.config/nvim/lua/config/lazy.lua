@@ -33,4 +33,7 @@ require('lazy').setup {
   install = { colorscheme = { 'onedark', 'habamax' } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  ui = {
+    border = 'rounded',
+  },
 }

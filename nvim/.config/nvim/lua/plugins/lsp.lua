@@ -12,7 +12,11 @@ return {
   },
   {
     'williamboman/mason.nvim',
-    opts = {},
+    opts = {
+      ui = {
+        border = 'rounded',
+      },
+    },
   },
   {
     'williamboman/mason-lspconfig.nvim',
@@ -55,7 +59,7 @@ return {
           },
         },
       },
-      signature = { enabled = true },
+      -- signature = { enabled = true },
     },
     opts_extend = { 'sources.default' },
   },
@@ -75,12 +79,43 @@ return {
       },
     },
     config = function(_, opts)
+      -- Set the diagnostic icons
       vim.diagnostic.config {
         signs = {
           text = { ERROR = '', WARN = '', INFO = '', HINT = '' },
           -- text = { ERROR = " ", WARN  = " ", INFO  = " ", HINT  = " "}
         },
       }
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if not client then
+            return
+          end
+
+          -- Style the built in keymaps to use rounded borders
+          vim.keymap.set('n', 'K', function()
+            return vim.lsp.buf.hover { border = 'rounded' }
+          end, { desc = 'Hover Information', buffer = args.buf })
+
+          vim.keymap.set({ 'i', 's' }, '<C-S>', function()
+            vim.lsp.buf.signature_help { border = 'rounded' }
+          end, { desc = 'Signature Help' })
+
+          if client:supports_method 'textDocument/formatting' then
+            -- Format the current buffer on save
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = args.buf,
+              callback = function()
+                vim.lsp.buf.format { bufnr = args.buf, id = client.id }
+              end,
+            })
+          end
+        end,
+      })
+
       local lspconfig = require 'lspconfig'
       for server, config in pairs(opts.servers) do
         config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)

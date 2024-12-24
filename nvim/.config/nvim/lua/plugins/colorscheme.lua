@@ -8,5 +8,6 @@ return {
   init = function()
     vim.cmd.colorscheme 'onedark'
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'NONE' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE' })
   end,
 }

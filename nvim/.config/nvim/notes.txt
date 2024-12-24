@@ -35,6 +35,5 @@ OTHER
 :set option?     See the value of an option
 
 TODO
-auto format on save
-lazygit
+vim-fugitive?
 

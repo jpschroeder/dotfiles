@@ -18,9 +18,9 @@ return {
   },
   config = function(_, opts)
     -- clear the background of the whichkey window
-    local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
-    local fg = hl and hl.fg or 'NONE'
-    vim.api.nvim_set_hl(0, 'WhichKeyNormal', { fg = fg, bg = 'NONE' })
+    -- local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
+    -- local fg = hl and hl.fg or 'NONE'
+    -- vim.api.nvim_set_hl(0, 'WhichKeyNormal', { fg = fg, bg = 'NONE' })
 
     require('which-key').setup(opts)
   end,
