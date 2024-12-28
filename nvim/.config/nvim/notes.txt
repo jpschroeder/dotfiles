@@ -33,6 +33,7 @@ q                Stop recording macro
 
 OTHER
 :set option?     See the value of an option
+:InspectTree     See the treesitter tree
 
 TODO
 vim-fugitive?
