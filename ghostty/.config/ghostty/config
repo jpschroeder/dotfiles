@@ -1,7 +1,9 @@
 theme = onedark-darker
-keybind = alt+j=goto_split:bottom
-keybind = alt+h=goto_split:left
-keybind = alt+l=goto_split:right
-keybind = alt+k=goto_split:top
+
+keybind = ctrl+up=goto_split:top
+keybind = ctrl+left=goto_split:left
+keybind = ctrl+down=goto_split:bottom
+keybind = ctrl+right=goto_split:right
+
 keybind = ctrl+shift+\=new_split:right
 keybind = ctrl+shift+-=new_split:down
