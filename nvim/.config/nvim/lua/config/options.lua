@@ -28,6 +28,7 @@ vim.opt.smartindent = true
 vim.opt.smoothscroll = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.virtualedit = 'block'
 vim.opt.wrap = false

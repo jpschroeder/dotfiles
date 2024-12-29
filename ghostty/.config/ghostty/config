@@ -7,3 +7,7 @@ keybind = ctrl+right=goto_split:right
 
 keybind = ctrl+shift+\=new_split:right
 keybind = ctrl+shift+-=new_split:down
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
