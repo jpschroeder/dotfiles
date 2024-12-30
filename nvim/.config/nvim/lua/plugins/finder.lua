@@ -1,7 +1,14 @@
 return {
   'ibhagwan/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = {},
+  opts = {
+    keymap = {
+      fzf = {
+        true,
+        ['ctrl-q'] = 'select-all+accept',
+      },
+    },
+  },
   keys = {
     { '<leader>,', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Switch Buffer' },
     { '<leader>/', '<cmd>FzfLua live_grep<cr>', desc = 'Grep (Root Dir)' },
