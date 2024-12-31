@@ -6,6 +6,7 @@ C                Change to end of line
 CTRL-^           Edit the alternate file
 ~                Toggle case
 "+y              Yank to system clipboard
+c_CTRL_R +       Paste from clipboard in command mode (or middle click)
 
 LSP
 i_CTRL-X_CTRL-O  Trigger Omni Completion

@@ -23,6 +23,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Quickfix
 vim.keymap.set('n', '<leader>q', vim.cmd.copen, { desc = 'Open [Q]uickfix list' })
+vim.keymap.set('n', '<leader>Q', vim.cmd.cclose, { desc = 'Close [Q]uickfix list' })
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
