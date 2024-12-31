@@ -32,11 +32,15 @@ q                Stop recording macro
 @a               Play back the macro in the a register
 @@               Play back the last macro
 
+COMPILERS
+:make            Run makefile or pytest
+:make -k mytest  Run a test by name (with a pytest file open)
+:compiler pytest Set the built in compiler plugin for pytest
+
 OTHER
 :set option?     See the value of an option
 :InspectTree     See the treesitter tree
-:make            Run makefile or pytest
-:compiler pytest Set the built in compiler plugin for pytest
+
 
 TODO
 vim-fugitive?
