@@ -34,6 +34,8 @@ q                Stop recording macro
 OTHER
 :set option?     See the value of an option
 :InspectTree     See the treesitter tree
+:make            Run makefile or pytest
+:compiler pytest Set the built in compiler plugin for pytest
 
 TODO
 vim-fugitive?

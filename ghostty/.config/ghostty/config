@@ -11,3 +11,5 @@ keybind = ctrl+shift+-=new_split:down
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+
+unfocused-split-opacity = 0.9
