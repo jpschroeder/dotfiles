@@ -3,17 +3,15 @@ return {
   'mikavilpas/yazi.nvim',
   keys = {
     {
-      '<leader>fe',
+      '<leader>e',
       '<cmd>Yazi cwd<cr>',
       desc = 'Explorer Yazi (Root Dir)',
     },
     {
-      '<leader>fE',
+      '<leader>E',
       '<cmd>Yazi<cr>',
       desc = 'Explorer Yazi (cwd)',
     },
-    { '<leader>e', '<leader>fe', desc = 'Explorer Yazi (Root Dir)', remap = true },
-    { '<leader>E', '<leader>fE', desc = 'Explorer Yazi (cwd)', remap = true },
     {
       -- NOTE: this requires a version of yazi that includes
       -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18

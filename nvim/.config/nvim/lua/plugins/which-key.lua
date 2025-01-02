@@ -6,7 +6,6 @@ return {
     spec = {
       mode = { 'n', 'v' },
       { '<leader>b', group = 'buffer' },
-      { '<leader>f', group = 'file/find' },
       { '<leader>s', group = 'search' },
       { '<leader>g', group = 'git' },
       { '[', group = 'prev' },

@@ -45,4 +45,4 @@ vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'Execute the current lua se
 
 -- File
 vim.keymap.set({ 'x', 'n' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
+-- vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })

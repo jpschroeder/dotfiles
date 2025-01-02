@@ -25,6 +25,7 @@ CTRL-W_H         Move window to the left
 CTRL-W_L         Move window to the right
 CTRL-W_T         Move window to new tab
 CTRL-W_=         Resize all windows
+:enew            Edit a new unnamed buffer
 
 MACROS
 qa               Record macro to a register
