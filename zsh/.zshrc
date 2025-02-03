@@ -53,8 +53,7 @@ alias pbpaste='xsel --clipboard --output'
 alias shortdate="date '+%Y_%m_%d'"
 alias n='nvim'
 alias g='git'
-alias lvim='NVIM_APPNAME=lvim nvim'
-alias kvim='NVIM_APPNAME=kvim nvim'
+alias dvim='NVIM_APPNAME=dvim nvim'
 
 eval "$(fzf --zsh)"
 
@@ -96,10 +95,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # END Ubuntu recommended zsh options
 
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
