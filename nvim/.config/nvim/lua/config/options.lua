@@ -3,7 +3,7 @@ vim.g.netrw_liststyle = 3
 vim.g.pytest_makeprg_params = '--tb=line --quiet' -- Set default options when running :make in a pytest file
 vim.highlight.priorities.semantic_tokens = 95 -- Prevent LSP from overwrtiting treesitter color settings
 vim.opt.breakindent = true
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 vim.opt.colorcolumn = '88'
 vim.opt.confirm = true
 vim.opt.cursorline = true
