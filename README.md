@@ -28,3 +28,7 @@ rm -rf ~/.local/share/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
 ```
+
+## todo
+
+* make it easier to see the ghostty split divides

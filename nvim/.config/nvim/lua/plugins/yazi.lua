@@ -3,12 +3,12 @@ return {
   'mikavilpas/yazi.nvim',
   keys = {
     {
-      '<leader>e',
+      '<leader>y',
       '<cmd>Yazi cwd<cr>',
       desc = 'Explorer Yazi (Root Dir)',
     },
     {
-      '<leader>E',
+      '<leader>Y',
       '<cmd>Yazi<cr>',
       desc = 'Explorer Yazi (cwd)',
     },

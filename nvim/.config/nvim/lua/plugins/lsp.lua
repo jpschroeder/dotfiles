@@ -120,11 +120,11 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>cF',
         function()
           require('conform').format { async = true }
         end,
-        mode = '',
+        mode = { 'n', 'v' },
         desc = 'Format buffer',
       },
     },
