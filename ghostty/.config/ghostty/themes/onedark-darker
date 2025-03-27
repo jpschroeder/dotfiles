@@ -31,7 +31,8 @@ background = 181b20
 # Lighten up the foreground a bit
 # original: https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/colors.less#L27
 # foreground = abb2bf
-foreground = c5cad3 # hsl(220, 14%, 80%)
+# updated: hsl(220, 14%, 80%)
+foreground = c5cad3
 
 cursor-color = 979eab
 selection-background = 323641
