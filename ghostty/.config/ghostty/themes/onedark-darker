@@ -27,7 +27,12 @@ palette = 7=#abb2bf
 palette = 15=#ffffff
 
 background = 181b20
-foreground = abb2bf
+
+# Lighten up the foreground a bit
+# original: https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/colors.less#L27
+# foreground = abb2bf
+foreground = c5cad3 # hsl(220, 14%, 80%)
+
 cursor-color = 979eab
 selection-background = 323641
 selection-foreground = abb2bf

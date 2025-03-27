@@ -4,6 +4,11 @@ return {
   opts = {
     style = 'darker',
     transparent = true,
+    colors = {
+      -- Lighten up the foreground a bit
+      -- original: https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/colors.less#L27
+      fg = '#c5cad3', -- hsl(220, 14%, 80%)
+    },
   },
   init = function()
     vim.cmd.colorscheme 'onedark'
