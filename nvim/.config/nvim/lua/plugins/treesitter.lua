@@ -65,12 +65,19 @@ return {
           ['ic'] = { query = '@class.inner', desc = 'Select inner class' },
           ['ab'] = { query = '@block.outer', desc = 'Select outer block' },
           ['ib'] = { query = '@block.inner', desc = 'Select inner block' },
+          -- For ledger files
+          ['ax'] = { query = '@xact.outer', desc = 'Select outer transaction' },
+          ['ix'] = { query = '@xact.inner', desc = 'Select inner transaction' },
+          ['ap'] = { query = '@posting.outer', desc = 'Select outer posting' },
+          ['ip'] = { query = '@posting.inner', desc = 'Select inner posting' },
         },
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
           ['@function.outer'] = 'V', -- linewise
           ['@class.outer'] = 'V', -- linewise
           ['@block.outer'] = 'V', -- linewise
+          ['@xact.outer'] = 'V', -- linewise
+          ['@posting.outer'] = 'V', -- linewise
         },
       },
       move = {
@@ -81,24 +88,32 @@ return {
           [']f'] = '@function.outer',
           [']c'] = '@class.outer',
           [']b'] = '@block.outer',
+          [']x'] = '@xact.outer', -- for ledger files
+          [']p'] = '@posting.outer', -- for ledger files
         },
         goto_next_end = {
           [']A'] = '@parameter.outer',
           [']F'] = '@function.outer',
           [']C'] = '@class.outer',
           [']B'] = '@block.outer',
+          [']X'] = '@xact.outer', -- for ledger files
+          [']P'] = '@posting.outer', -- for ledger files
         },
         goto_previous_start = {
           ['[a'] = '@parameter.outer',
           ['[f'] = '@function.outer',
           ['[c'] = '@class.outer',
           ['[b'] = '@block.outer',
+          ['[x'] = '@xact.outer', -- for ledger files
+          ['[p'] = '@posting.outer', -- for ledger files
         },
         goto_previous_end = {
           ['[A'] = '@parameter.outer',
           ['[F'] = '@function.outer',
           ['[C'] = '@class.outer',
           ['[B'] = '@block.outer',
+          ['[X'] = '@xact.outer', -- for ledger files
+          ['[P'] = '@posting.outer', -- for ledger files
         },
       },
     },
