@@ -21,7 +21,7 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     opts = {
-      ensure_installed = { 'lua_ls', 'gopls', 'pyright', 'terraformls' },
+      ensure_installed = { 'lua_ls', 'gopls', 'basedpyright', 'terraformls' },
     },
   },
   {
@@ -75,7 +75,7 @@ return {
       servers = {
         lua_ls = {},
         gopls = {},
-        pyright = {},
+        basedpyright = {},
         terraformls = {},
       },
     },

@@ -2,7 +2,9 @@ return {
   'folke/snacks.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
-    picker = {},
+    picker = {
+      layout = { preset = 'ivy' },
+    },
     lazygit = {},
     explorer = {},
     styles = {
