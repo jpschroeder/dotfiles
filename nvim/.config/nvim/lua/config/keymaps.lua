@@ -22,10 +22,15 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search' })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Quickfix
-vim.keymap.set('n', '<leader>q', vim.cmd.copen, { desc = 'Open [Q]uickfix list' })
-vim.keymap.set('n', '<leader>Q', vim.cmd.cclose, { desc = 'Close [Q]uickfix list' })
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
+vim.keymap.set('n', '<leader>q', function()
+  if vim.fn.getqflist({ winid = 0 }).winid == 0 then
+    vim.cmd.copen()
+  else
+    vim.cmd.cclose()
+  end
+end, { desc = 'Toggle [Q]uickfix list' })
 
 -- Buffers
 vim.keymap.set('n', '<leader>bd', '<cmd>bp|bd#<cr>', { desc = 'Delete Buffer' })
@@ -44,5 +49,5 @@ vim.keymap.set('n', '<space>x', ':.lua<CR>', { desc = 'Execute the current lua l
 vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'Execute the current lua selection' })
 
 -- File
-vim.keymap.set({ 'x', 'n' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
+-- vim.keymap.set({ 'x', 'n' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 -- vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
