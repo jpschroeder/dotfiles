@@ -20,6 +20,7 @@ bindkey "^X^E" edit-command-line
 bindkey -v '^?' backward-delete-char
 
 export PATH="/usr/local/go/bin:$PATH"
+export PATH="${HOME}/go/bin:$PATH"
 export PATH="/usr/local/zig:$PATH"
 
 export HISTFILE="$HOME/.zsh_history"
