@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>q', function()
   else
     vim.cmd.cclose()
   end
-end, { desc = 'Toggle [Q]uickfix list' })
+end, { desc = 'Toggle Quickfix list' })
 
 -- Buffers
 vim.keymap.set('n', '<leader>bd', '<cmd>bp|bd#<cr>', { desc = 'Delete Buffer' })
@@ -43,11 +43,3 @@ vim.keymap.set('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right' })
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
-
--- Neovim
-vim.keymap.set('n', '<space>x', ':.lua<CR>', { desc = 'Execute the current lua line' })
-vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'Execute the current lua selection' })
-
--- File
--- vim.keymap.set({ 'x', 'n' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
--- vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })

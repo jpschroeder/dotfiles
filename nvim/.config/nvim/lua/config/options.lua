@@ -33,3 +33,11 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.virtualedit = 'block'
 vim.opt.wrap = false
+vim.opt.winborder = 'rounded' -- style hover and signature help windows
+
+-- Set the diagnostic icons
+vim.diagnostic.config {
+  signs = {
+    text = { ERROR = '', WARN = '', INFO = '', HINT = '' },
+  },
+}

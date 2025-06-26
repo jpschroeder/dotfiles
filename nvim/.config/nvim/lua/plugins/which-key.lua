@@ -29,7 +29,7 @@ return {
       function()
         require('which-key').show()
       end,
-      desc = 'Which Key',
+      desc = 'Which Key UI',
     },
   },
 }

@@ -12,11 +12,7 @@ return {
   },
   {
     'williamboman/mason.nvim',
-    opts = {
-      ui = {
-        border = 'rounded',
-      },
-    },
+    opts = {},
   },
   {
     'williamboman/mason-lspconfig.nvim',
@@ -48,8 +44,7 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
-        default = { 'lazydev', 'lsp', 'path' },
+        default = { 'lazydev', 'lsp', 'path', 'buffer' },
         providers = {
           lazydev = {
             name = 'LazyDev',
@@ -71,47 +66,20 @@ return {
       'saghen/blink.cmp',
       'folke/lazydev.nvim',
     },
-    opts = {
-      servers = {
-        lua_ls = {},
-        gopls = {},
-        basedpyright = {},
-        terraformls = {},
-      },
-    },
-    config = function(_, opts)
-      -- Set the diagnostic icons
-      vim.diagnostic.config {
-        signs = {
-          text = { ERROR = '', WARN = '', INFO = '', HINT = '' },
-          -- text = { ERROR = " ", WARN  = " ", INFO  = " ", HINT  = " "}
+    config = function()
+      vim.lsp.config('basedpyright', {
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = 'standard',
+            },
+          },
         },
-      }
-
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then
-            return
-          end
-
-          -- Style the built in keymaps to use rounded borders
-          vim.keymap.set('n', 'K', function()
-            return vim.lsp.buf.hover { border = 'rounded' }
-          end, { desc = 'Hover Information', buffer = args.buf })
-
-          vim.keymap.set({ 'i', 's' }, '<C-S>', function()
-            vim.lsp.buf.signature_help { border = 'rounded' }
-          end, { desc = 'Signature Help' })
-        end,
       })
-
-      local lspconfig = require 'lspconfig'
-      for server, config in pairs(opts.servers) do
-        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
-      end
+      vim.lsp.enable 'basedpyright'
+      vim.lsp.enable 'lua_ls'
+      vim.lsp.enable 'gopls'
+      vim.lsp.enable 'terraformls'
     end,
   },
   {
@@ -120,12 +88,12 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>cF',
+        '<leader>f',
         function()
           require('conform').format { async = true }
         end,
         mode = { 'n', 'v' },
-        desc = 'Format buffer',
+        desc = 'Format Buffer',
       },
     },
     -- This will provide type hinting with LuaLS
@@ -135,7 +103,7 @@ return {
       -- Define your formatters
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
+        python = { 'ruff_format', 'ruff_organize_imports' },
       },
       -- Set default options
       default_format_opts = {
