@@ -10,8 +10,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -44,9 +44,9 @@ export EDITOR='nvim'
 
 alias hr='printf "%*s\n" "${COLUMNS:-$(tput cols)}" "" | tr " " -'
 alias lg='lazygit'
-alias ll='exa -lh --group-directories-first --icons'
-alias ls='exa'
-alias tree='exa --tree'
+alias ll='eza -lh --group-directories-first --icons'
+alias ls='eza'
+alias tree='eza --tree'
 alias tf='terraform'
 alias bat='batcat -p'
 alias pbcopy='xsel --clipboard --input'

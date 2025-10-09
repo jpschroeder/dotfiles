@@ -11,16 +11,6 @@ return {
     },
   },
   {
-    'williamboman/mason.nvim',
-    opts = {},
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    opts = {
-      ensure_installed = { 'lua_ls', 'gopls', 'basedpyright', 'terraformls' },
-    },
-  },
-  {
     'saghen/blink.cmp',
     -- dependencies = 'rafamadriz/friendly-snippets',
     version = '*',
@@ -61,8 +51,6 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
       'saghen/blink.cmp',
       'folke/lazydev.nvim',
     },
