@@ -1,0 +1,19 @@
+theme = onedark-darker
+
+keybind = super+k=goto_split:top
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+l=goto_split:right
+
+keybind = performable:super+c=copy_to_clipboard
+keybind = performable:super+v=paste_from_clipboard
+
+keybind = ctrl+shift+\=new_split:right
+keybind = ctrl+shift+-=new_split:down
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+unfocused-split-opacity = 0.9
+split-divider-color = abb2bf
