@@ -10,10 +10,14 @@ else
 end
 
 -- Kitty
-vim.keymap.set('n', '<C-h>', '<cmd>KittyNavigateLeft<cr>', { desc = 'Go to Left Window' })
-vim.keymap.set('n', '<C-j>', '<cmd>KittyNavigateDown<cr>', { desc = 'Go to Lower Window' })
-vim.keymap.set('n', '<C-k>', '<cmd>KittyNavigateUp<cr>', { desc = 'Go to Upper Window' })
-vim.keymap.set('n', '<C-l>', '<cmd>KittyNavigateRight<cr>', { desc = 'Go to Right Window' })
+-- vim.keymap.set('n', '<C-h>', '<cmd>KittyNavigateLeft<cr>', { desc = 'Go to Left Window' })
+-- vim.keymap.set('n', '<C-j>', '<cmd>KittyNavigateDown<cr>', { desc = 'Go to Lower Window' })
+-- vim.keymap.set('n', '<C-k>', '<cmd>KittyNavigateUp<cr>', { desc = 'Go to Upper Window' })
+-- vim.keymap.set('n', '<C-l>', '<cmd>KittyNavigateRight<cr>', { desc = 'Go to Right Window' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Go to Left Window', remap = true })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Go to Lower Window', remap = true })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Go to Upper Window', remap = true })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Go to Right Window', remap = true })
 
 -- Utils
 vim.keymap.set('v', '<', '<gv', { desc = 'De-indent selection' })
@@ -40,6 +44,8 @@ vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Wi
 -- Windows
 vim.keymap.set('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below' })
 vim.keymap.set('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right' })
+-- Force <C-w>] to open in a vertical split instead of horizontal
+vim.keymap.set('n', '<C-w>]', ':vertical wincmd ]<CR>', { desc = 'Tag in Vertical Split' })
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
