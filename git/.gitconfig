@@ -1,0 +1,21 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = john@schroederspace.com
+	name = John Schroeder
+[pull]
+  rebase = true
+[push]
+  autoSetupRemote = true
+[branch]
+  sort = -committerdate
+[tag]
+	sort = -version:refname
+[alias]
+  co = checkout
+  st = status
+  br = branch
