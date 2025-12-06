@@ -26,6 +26,3 @@ Then run: `mkinitcpio -p linux`
 
 If booting through systemd boot, set the path: `/boot/loader/entries/arch.conf`
 
-
-
-
