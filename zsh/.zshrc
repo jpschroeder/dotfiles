@@ -104,3 +104,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+eval "$(op completion zsh)"; compdef _op op

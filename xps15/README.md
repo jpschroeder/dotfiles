@@ -8,6 +8,8 @@ These 2 parameters are the important ones:
 
 `xhci_hcd.quirks=0x80`: Without this, suspend/resume doesn't work correctly with my docking station
 
+`systemd.tpm2_wait=false`: The system has an issue reading the tpm device. Without this, it will delay startup waiting for it.
+
 You can verify these parameters after boot using:
 ```sh
 cat /proc/cmdline
