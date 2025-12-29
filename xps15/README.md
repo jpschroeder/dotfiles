@@ -2,13 +2,15 @@
 
 This is how to set kernel parameters for my xps-15 laptop. These settings aren't meant to be restored using stow.
 
-These 2 parameters are the important ones:
+These parameters are the important ones:
 
 `pcie_aspm=off`: Without this, there are errors spamming the logs constantly
 
 `xhci_hcd.quirks=0x80`: Without this, suspend/resume doesn't work correctly with my docking station
 
 `systemd.tpm2_wait=false`: The system has an issue reading the tpm device. Without this, it will delay startup waiting for it.
+
+`i915.enable_psr=0`: The Intel Integrated Graphics driver is failing to communicate with the display's "Active Control Technology." `i915 *ERROR* Failed to get ACT`
 
 You can verify these parameters after boot using:
 ```sh
@@ -28,3 +30,8 @@ Then run: `mkinitcpio -p linux`
 
 If booting through systemd boot, set the path: `/boot/loader/entries/arch.conf`
 
+# Check For Startup Errors
+
+```sh
+journalctl -xb -p 3
+```
