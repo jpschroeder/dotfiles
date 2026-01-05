@@ -10,7 +10,7 @@ These parameters are the important ones:
 
 `systemd.tpm2_wait=false`: The system has an issue reading the tpm device. Without this, it will delay startup waiting for it.
 
-`i915.enable_psr=0`: The Intel Integrated Graphics driver is failing to communicate with the display's "Active Control Technology." `i915 *ERROR* Failed to get ACT`
+`i915.enable_psr=0 i915.enable_fbc=0 i915.enable_dc=0`: The Intel Integrated Graphics driver is failing to communicate with the display's "Active Control Technology." `i915 *ERROR* Failed to get ACT`
 
 You can verify these parameters after boot using:
 ```sh
