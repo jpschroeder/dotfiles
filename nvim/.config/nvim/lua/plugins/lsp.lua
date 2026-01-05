@@ -92,6 +92,9 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'ruff_format', 'ruff_organize_imports' },
+        json = { 'jq' },
+        xml = { 'xmllint' },
+        xsd = { 'xmllint' },
       },
       -- Set default options
       default_format_opts = {
