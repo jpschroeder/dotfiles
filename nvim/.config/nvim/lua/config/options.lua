@@ -42,3 +42,5 @@ vim.diagnostic.config {
     text = { ERROR = '', WARN = '', INFO = '', HINT = '' },
   },
 }
+
+vim.opt.mousescroll = 'ver:1,hor:3'
