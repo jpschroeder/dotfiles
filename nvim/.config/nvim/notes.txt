@@ -17,6 +17,7 @@ gri              LSP Implementation
 gO               LSP Document Symbol
 i_CTRL-S         LSP Signature Help
 gg=G             Reindent file
+:checkhealth vim.lsp  See Lsp info
 
 WINDOWS
 CTRL-W_K         Move window to the top
@@ -40,8 +41,10 @@ COMPILERS
 
 OTHER
 :set option?     See the value of an option
-:InspectTree     See the treesitter tree
 
+TREESITTER
+:InspectTree     See the treesitter tree
+v_an              Select the current treesitter node (follow with 'an' to expand and 'in' to contract)
 
 TODO
 vim-fugitive?
