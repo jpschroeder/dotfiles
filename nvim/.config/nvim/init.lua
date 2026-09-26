@@ -130,3 +130,13 @@ vim.keymap.set('n', '<C-w>]', ':vertical wincmd ]<CR>', { desc = 'Tag in Vertica
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostics under the cursor' })
+
+-- Toggle line wrap
+vim.keymap.set('n', '<leader>w', '<cmd>set wrap!<cr>', { desc = 'Toggle Wrap' })
+
+-- Horizontal scroll
+vim.keymap.set('n', '<M-l>', '5zl', { desc = 'Scroll Right' })
+vim.keymap.set('n', '<M-h>', '5zh', { desc = 'Scroll Left' })
+
+-- Quit All without saving
+vim.keymap.set('n', 'ZQ', '<cmd>qa!<CR>', { desc = 'Quit all windows without saving' })

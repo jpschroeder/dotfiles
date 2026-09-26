@@ -15,6 +15,9 @@ export PATH="${HOME}/.local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="${HOME}/go/bin:$PATH"
 export PATH="/usr/local/zig:$PATH"
+export PATH=/home/john/.opencode/bin:$PATH
+
+export PRINTER=Thermal58
 
 # =============================================================================
 # History Configuration
@@ -106,6 +109,8 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+[ -f ~/.env ] && source ~/.env
 
 # External tool integrations
 eval "$(fzf --zsh)"

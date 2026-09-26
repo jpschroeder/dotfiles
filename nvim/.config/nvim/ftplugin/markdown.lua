@@ -4,7 +4,7 @@
 vim.opt_local.wrap = true -- Enable soft-wrapping for long lines
 vim.opt_local.linebreak = true -- Wrap text at words, never mid-character
 vim.opt_local.breakindent = true -- Align wrapped lines to match their initial indentation
-vim.opt_local.conceallevel = 2 -- Hide markdown symbols (**bold**, [links](url)) unless editing
+-- vim.opt_local.conceallevel = 2 -- Hide markdown symbols (**bold**, [links](url)) unless editing
 
 --------------------------------------------------------------------------------
 -- 2. Writing & Layout Configurations (Treesitter Optimized)

@@ -13,5 +13,6 @@ vim.lsp.enable 'basedpyright'
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'gopls'
 vim.lsp.enable 'terraformls'
+vim.lsp.enable 'vtsls'
 
 vim.pack.add({ 'https://github.com/folke/lazydev.nvim' }, { load = false })
