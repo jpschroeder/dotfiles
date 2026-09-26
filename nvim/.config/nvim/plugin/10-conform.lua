@@ -7,6 +7,9 @@ require('conform').setup {
     json = { 'jq' },
     xml = { 'xmllint' },
     xsd = { 'xmllint' },
+    html = { 'prettier' },
+    javascript = { 'prettier' },
+    glsl = { 'clang-format' },
   },
   -- Set default options
   default_format_opts = {
